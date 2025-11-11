@@ -1,0 +1,148 @@
+{
+  "graph_info": {
+    "subject": "sub-YLOPDHC01",
+    "graph_type": "comprehensive_structural",
+    "modality": "T1w MRI + FreeSurfer",
+    "atlas": "Schaefer2018_400Parcels_7Networks_order",
+    "processing_date": "2025-11-11 21:26:49.058998",
+    "processing_pipeline": "fMRIPrep + FreeSurfer + Custom"
+  },
+  "atlas_coverage": {
+    "total_rois": 400,
+    "hemisphere_distribution": {
+      "left_hemisphere": 200,
+      "right_hemisphere": 200
+    },
+    "network_distribution": {
+      "Vis": 58,
+      "SomMot": 58,
+      "DorsAttn": 58,
+      "SalVentAttn": 58,
+      "Limbic": 56,
+      "Cont": 56,
+      "Default": 56
+    }
+  },
+  "morphometric_features": {
+    "n_features_per_roi": 9,
+    "feature_types": [
+      "thickness",
+      "area",
+      "grayvol",
+      "meancurv",
+      "gauscurv",
+      "foldind",
+      "curvind",
+      "whitevol",
+      "pialvol"
+    ],
+    "feature_descriptions": {
+      "thickness": "Cortical thickness (mm)",
+      "area": "Surface area (mm\u00b2)",
+      "grayvol": "Gray matter volume (mm\u00b3)",
+      "meancurv": "Mean curvature",
+      "gauscurv": "Gaussian curvature",
+      "foldind": "Folding index",
+      "curvind": "Curvature index",
+      "whitevol": "White matter volume (mm\u00b3)",
+      "pialvol": "Pial volume (mm\u00b3)"
+    }
+  },
+  "connectivity": {
+    "similarity_threshold": 0.15,
+    "n_edges": 11232,
+    "edge_density": 0.1404,
+    "connectivity_type": "morphometric_similarity"
+  },
+  "freesurfer_data": {
+    "cortical_regions": 68,
+    "subcortical_regions": 24,
+    "brain_volumes": {
+      "BrainSegVol-to-eTIV": 0.825,
+      "lhCortexVol": 252000,
+      "rhCortexVol": 249000,
+      "CortexVol": 501000,
+      "lhCerebralWhiteMatterVol": 245000,
+      "rhCerebralWhiteMatterVol": 242000,
+      "CerebralWhiteMatterVol": 487000,
+      "SubCortGrayVol": 62000,
+      "TotalGrayVol": 658000,
+      "SupratentorialVol": 1145000,
+      "SupratentorialVolNotVent": 1095000,
+      "Mask-BrainMask": 1520000,
+      "eTIV": 1520000,
+      "BrainSegVol": 1254000,
+      "BrainSegVolNotVent": 1204000
+    },
+    "freesurfer_version": "7.3.2",
+    "example_cortical_metrics": {
+      "bankssts": {
+        "thickness": 3.1256168471256003,
+        "area": 1452,
+        "volume": 4532
+      },
+      "caudalanteriorcingulate": {
+        "thickness": 1.8696974210063995,
+        "area": 843,
+        "volume": 6080
+      },
+      "caudalmiddlefrontal": {
+        "thickness": 3.7185115781613898,
+        "area": 1660,
+        "volume": 6045
+      },
+      "cuneus": {
+        "thickness": 1.5121684569869156,
+        "area": 2727,
+        "volume": 5462
+      },
+      "entorhinal": {
+        "thickness": 1.7095037437490193,
+        "area": 2173,
+        "volume": 3578
+      }
+    }
+  },
+  "sample_roi_labels": [
+    "7Networks_LH_Vis_Primary_1",
+    "7Networks_LH_SomMot_Primary_1",
+    "7Networks_LH_DorsAttn_Frontal_1",
+    "7Networks_LH_SalVentAttn_Anterior_1",
+    "7Networks_LH_Limbic_Hippocampal_1",
+    "7Networks_LH_Cont_Dorsolateral_1",
+    "7Networks_LH_Default_Medial_1",
+    "7Networks_LH_Vis_Secondary_1",
+    "7Networks_LH_SomMot_Premotor_1",
+    "7Networks_LH_DorsAttn_Parietal_1",
+    "7Networks_LH_SalVentAttn_Posterior_1",
+    "7Networks_LH_Limbic_Parahippocampal_1",
+    "7Networks_LH_Cont_Ventrolateral_1",
+    "7Networks_LH_Default_Lateral_1",
+    "7Networks_LH_Vis_Associative_1",
+    "7Networks_LH_SomMot_Supplementary_1",
+    "7Networks_LH_DorsAttn_Occipital_1",
+    "7Networks_LH_SalVentAttn_Ventral_1",
+    "7Networks_LH_Limbic_Retrosplenial_1",
+    "7Networks_LH_Cont_Anterior_1"
+  ],
+  "configuration": {
+    "schaefer_n_rois": 400,
+    "morphometric_features": [
+      "thickness",
+      "area",
+      "grayvol",
+      "meancurv",
+      "gauscurv",
+      "foldind",
+      "curvind",
+      "whitevol",
+      "pialvol"
+    ],
+    "similarity_threshold": 0.15,
+    "normalize_features": true,
+    "use_surface_features": true,
+    "use_volume_features": true,
+    "use_curvature_features": true,
+    "distance_weighting": true
+  }
+}

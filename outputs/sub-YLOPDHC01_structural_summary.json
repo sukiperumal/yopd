@@ -1,0 +1,50 @@
+{
+  "subject": "sub-YLOPDHC01",
+  "graph_type": "structural",
+  "modality": "T1w MRI + FreeSurfer",
+  "atlas": "Schaefer2018_200ROIs_7Networks",
+  "processing_date": "2025-11-11 21:22:38.564836",
+  "data_summary": {
+    "n_rois": 200,
+    "n_features_per_roi": 4,
+    "feature_types": [
+      "thickness",
+      "area",
+      "grayvol",
+      "curvature"
+    ],
+    "n_edges": 19900,
+    "similarity_threshold": 0.1
+  },
+  "freesurfer_metrics": {
+    "cortical_regions": 6,
+    "subcortical_regions": 4,
+    "example_thickness_range": [
+      1.733,
+      3.682
+    ],
+    "total_gray_volume": 658000
+  },
+  "file_info": {
+    "source_directory": "/Users/sukiperumal/Documents/yopd/derivatives/fmriprep/sourcedata/freesurfer/sub-YLOPDHC01",
+    "contains": [
+      "roi_features",
+      "similarity_matrix",
+      "cortical_data",
+      "subcortical_data",
+      "brain_volumes"
+    ]
+  },
+  "example_roi_labels": [
+    "7Networks_LH_Vis_1",
+    "7Networks_LH_SomMot_1",
+    "7Networks_LH_DorsAttn_1",
+    "7Networks_LH_SalVentAttn_1",
+    "7Networks_LH_Limbic_1",
+    "7Networks_LH_Cont_1",
+    "7Networks_LH_Default_1",
+    "7Networks_LH_Vis_2",
+    "7Networks_LH_SomMot_2",
+    "7Networks_LH_DorsAttn_2"
+  ]
+}

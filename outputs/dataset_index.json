@@ -1,0 +1,67 @@
+{
+  "dataset_info": {
+    "subject_id": "sub-YLOPDHC01",
+    "session": "ses-01",
+    "atlas": "Schaefer2018_400Parcels_7Networks_order",
+    "data_source": "/Users/sukiperumal/Documents/yopd/derivatives/fmriprep/",
+    "creation_date": "2025-11-11 21:26:49.058998",
+    "description": "Comprehensive multimodal brain graph dataset with structural, functional, and integrated representations"
+  },
+  "graph_files": {
+    "basic_graphs": {
+      "structural": "sub-YLOPDHC01_structural_graph.pkl (200 ROIs, 4 features)",
+      "functional": "sub-YLOPDHC01_functional_graph.pkl (200 ROIs, basic connectivity)",
+      "multimodal": "sub-YLOPDHC01_multimodal_graph.pkl (200 ROIs, basic integration)"
+    },
+    "comprehensive_graphs": {
+      "structural": "sub-YLOPDHC01_comprehensive_structural_graph.pkl (400 ROIs, 9 morphometric features)",
+      "functional": "sub-YLOPDHC01_comprehensive_functional_graph.pkl (400 ROIs, 8 graph metrics, 1485 timepoints)",
+      "multimodal": "sub-YLOPDHC01_comprehensive_multimodal_graph.pkl (400 ROIs, 17 integrated features, 3 fusion strategies)"
+    }
+  },
+  "summary_files": {
+    "comprehensive_multimodal_summary": "sub-YLOPDHC01_comprehensive_multimodal_summary.json",
+    "functional_summary": "sub-YLOPDHC01_functional_summary.json",
+    "structural_summary": "sub-YLOPDHC01_structural_summary.json",
+    "comprehensive_structural_summary": "sub-YLOPDHC01_comprehensive_structural_summary.json",
+    "comprehensive_functional_summary": "sub-YLOPDHC01_comprehensive_functional_summary.json",
+    "multimodal_summary": "sub-YLOPDHC01_multimodal_summary.json"
+  },
+  "file_sizes_mb": {
+    "sub-YLOPDHC01_multimodal_graph.pkl": 3.12,
+    "sub-YLOPDHC01_comprehensive_multimodal_summary.json": 0.0,
+    "sub-YLOPDHC01_functional_summary.json": 0.0,
+    "sub-YLOPDHC01_structural_summary.json": 0.0,
+    "sub-YLOPDHC01_comprehensive_structural_graph.pkl": 1.43,
+    "sub-YLOPDHC01_comprehensive_functional_graph.pkl": 9.27,
+    "sub-YLOPDHC01_functional_graph.pkl": 2.41,
+    "sub-YLOPDHC01_comprehensive_structural_summary.json": 0.0,
+    "sub-YLOPDHC01_comprehensive_functional_summary.json": 0.01,
+    "sub-YLOPDHC01_structural_graph.pkl": 0.36,
+    "demo_graph_outputs.py": 0.02,
+    "sub-YLOPDHC01_multimodal_summary.json": 0.0,
+    "sub-YLOPDHC01_comprehensive_multimodal_graph.pkl": 16.26
+  },
+  "atlas_details": {
+    "full_name": "Schaefer 2018 400 Parcels 7 Networks",
+    "networks": [
+      "Visual",
+      "Somatomotor",
+      "Dorsal Attention",
+      "Salience/VentAttn",
+      "Limbic",
+      "Control",
+      "Default"
+    ],
+    "hemispheres": 2,
+    "parcels_per_hemisphere": 200,
+    "reference": "Schaefer et al. (2018). Local-Global Parcellation of the Human Cerebral Cortex from Intrinsic Functional Connectivity MRI. Cerebral Cortex."
+  },
+  "usage_examples": {
+    "load_structural": "with open('sub-YLOPDHC01_comprehensive_structural_graph.pkl', 'rb') as f: graph = pickle.load(f)",
+    "access_features": "roi_features = graph['roi_features']  # Shape: (400, 9)",
+    "access_connectivity": "adjacency = graph['similarity_matrix']  # Shape: (400, 400)",
+    "roi_labels": "labels = graph['roi_labels']  # List of ROI names",
+    "network_analysis": "network_metrics = graph['network_integration']  # Network-level stats"
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "subject": "sub-YLOPDHC01",
+  "graph_type": "functional",
+  "modality": "fMRI BOLD",
+  "atlas": "Schaefer2018_200ROIs_7Networks",
+  "processing_date": "2025-11-11 21:23:13.645997",
+  "acquisition_info": {
+    "task": "rest",
+    "session": "ses-01",
+    "run": "1",
+    "tr_seconds": 0.607,
+    "n_timepoints": 990,
+    "scan_duration_minutes": 10.0,
+    "space": "MNI152NLin2009cAsym"
+  },
+  "connectivity_info": {
+    "metric": "correlation",
+    "threshold": 0.3,
+    "n_edges": 5214,
+    "confounds_applied": true
+  },
+  "graph_metrics": {
+    "degree": {
+      "mean": 52.14,
+      "range": [
+        38.0,
+        64.0
+      ]
+    },
+    "strength": {
+      "mean": 25.119705970017364,
+      "range": [
+        20.041292133268445,
+        30.641838385537433
+      ]
+    }
+  },
+  "file_info": {
+    "source_bold": "/Users/sukiperumal/Documents/yopd/derivatives/fmriprep/sub-YLOPDHC01/ses-01/func/sub-YLOPDHC01_ses-01_task-rest_run-1_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz",
+    "contains": [
+      "time_series",
+      "connectivity_matrix",
+      "adjacency_matrix",
+      "graph_metrics"
+    ]
+  },
+  "example_roi_labels": [
+    "7Networks_LH_Vis_1",
+    "7Networks_LH_SomMot_1",
+    "7Networks_LH_DorsAttn_1",
+    "7Networks_LH_SalVentAttn_1",
+    "7Networks_LH_Limbic_1",
+    "7Networks_LH_Cont_1",
+    "7Networks_LH_Default_1",
+    "7Networks_LH_Vis_2",
+    "7Networks_LH_SomMot_2",
+    "7Networks_LH_DorsAttn_2"
+  ]
+}

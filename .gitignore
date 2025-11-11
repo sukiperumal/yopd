@@ -34,3 +34,6 @@ data/
 .github/
 derivatives/
 licenses/
+
+gnn_pipeline/configs/
+gnn_pipeline/outputs/

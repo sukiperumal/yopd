@@ -1,0 +1,226 @@
+{
+  "graph_info": {
+    "subject": "sub-YLOPDHC01",
+    "graph_type": "comprehensive_functional",
+    "modality": "fMRI BOLD",
+    "atlas": "Schaefer2018_400Parcels_7Networks_order",
+    "processing_date": "2025-11-11 21:35:53.224726",
+    "processing_pipeline": "fMRIPrep + Nilearn + Custom"
+  },
+  "acquisition_parameters": {
+    "task": "rest",
+    "session": "ses-01",
+    "run": "1",
+    "tr_seconds": 0.607,
+    "n_timepoints": 1485,
+    "scan_duration_minutes": 15.0,
+    "space": "MNI152NLin2009cAsym"
+  },
+  "connectivity_analysis": {
+    "primary_metric": "correlation",
+    "available_matrices": [
+      "correlation",
+      "partial_correlation"
+    ],
+    "correlation_threshold": 0.25,
+    "n_edges": 79800,
+    "edge_density": 0.9975,
+    "frequency_bands": {
+      "slow_5": [
+        0.01,
+        0.027
+      ],
+      "slow_4": [
+        0.027,
+        0.073
+      ],
+      "slow_3": [
+        0.073,
+        0.198
+      ],
+      "slow_2": [
+        0.198,
+        0.25
+      ]
+    }
+  },
+  "graph_metrics": {
+    "degree": {
+      "mean": 399.0,
+      "std": 0.0,
+      "range": [
+        399.0,
+        399.0
+      ]
+    },
+    "strength": {
+      "mean": 265.95570106721584,
+      "std": 4.408369392107901,
+      "range": [
+        249.56843269669088,
+        276.38851493357254
+      ]
+    },
+    "clustering": {
+      "mean": 1.0,
+      "std": 0.0,
+      "range": [
+        1.0,
+        1.0
+      ]
+    },
+    "betweenness": {
+      "mean": 0.07303507866544416,
+      "std": 0.0429937372153808,
+      "range": [
+        0.0015710731576693226,
+        0.14993432179363925
+      ]
+    },
+    "closeness": {
+      "mean": 1.0,
+      "std": 0.0,
+      "range": [
+        1.0,
+        1.0
+      ]
+    },
+    "eigenvector": {
+      "mean": 0.04379858811893061,
+      "std": 0.02411811930454509,
+      "range": [
+        0.0002929425772428545,
+        0.08231233651144126
+      ]
+    },
+    "local_efficiency": {
+      "mean": 0.45473579008586484,
+      "std": 0.26328432016184794,
+      "range": [
+        0.007089880917652003,
+        0.8984175603372819
+      ]
+    },
+    "participation": {
+      "mean": 0.980182787796559,
+      "std": 0.0006944498188209488,
+      "range": [
+        0.9795918367346939,
+        0.9809988630724682
+      ]
+    }
+  },
+  "network_connectivity": {
+    "Vis": {
+      "within_network_connectivity": 0.7899875783928825,
+      "between_network_connectivity": 0.6459286883423461,
+      "n_nodes": 58,
+      "modularity": 0.37467022595291544
+    },
+    "SomMot": {
+      "within_network_connectivity": 0.785069630772927,
+      "between_network_connectivity": 0.6378286406073982,
+      "n_nodes": 58,
+      "modularity": 0.15690522129167042
+    },
+    "DorsAttn": {
+      "within_network_connectivity": 0.7983624294068589,
+      "between_network_connectivity": 0.6492755149466984,
+      "n_nodes": 58,
+      "modularity": 0.36977121943260816
+    },
+    "SalVentAttn": {
+      "within_network_connectivity": 0.791278759118639,
+      "between_network_connectivity": 0.643796833244303,
+      "n_nodes": 58,
+      "modularity": 0.15704631090073157
+    },
+    "Limbic": {
+      "within_network_connectivity": 0.7994723386628314,
+      "between_network_connectivity": 0.6526684197640732,
+      "n_nodes": 56,
+      "modularity": 0.18275811108996814
+    },
+    "Cont": {
+      "within_network_connectivity": 0.8100250510243558,
+      "between_network_connectivity": 0.6410956811215499,
+      "n_nodes": 56,
+      "modularity": 0.38718347391847563
+    },
+    "Default": {
+      "within_network_connectivity": 0.7867452508978615,
+      "between_network_connectivity": 0.6489978756173407,
+      "n_nodes": 56,
+      "modularity": 0.28413277237185536
+    }
+  },
+  "motion_assessment": {
+    "framewise_displacement_mean": 0.0861138016531127,
+    "framewise_displacement_max": 0.3408863765694786,
+    "dvars_mean": 1.380770012278659,
+    "scrubbed_timepoints": 14,
+    "percentage_scrubbed": 0.9427609427609427
+  },
+  "sample_roi_labels": [
+    "7Networks_LH_Vis_Primary_1",
+    "7Networks_LH_SomMot_Primary_1",
+    "7Networks_LH_DorsAttn_Frontal_1",
+    "7Networks_LH_SalVentAttn_Anterior_1",
+    "7Networks_LH_Limbic_Hippocampal_1",
+    "7Networks_LH_Cont_Dorsolateral_1",
+    "7Networks_LH_Default_Medial_1",
+    "7Networks_LH_Vis_Secondary_1",
+    "7Networks_LH_SomMot_Premotor_1",
+    "7Networks_LH_DorsAttn_Parietal_1",
+    "7Networks_LH_SalVentAttn_Posterior_1",
+    "7Networks_LH_Limbic_Parahippocampal_1",
+    "7Networks_LH_Cont_Ventrolateral_1",
+    "7Networks_LH_Default_Lateral_1",
+    "7Networks_LH_Vis_Associative_1",
+    "7Networks_LH_SomMot_Supplementary_1",
+    "7Networks_LH_DorsAttn_Occipital_1",
+    "7Networks_LH_SalVentAttn_Ventral_1",
+    "7Networks_LH_Limbic_Retrosplenial_1",
+    "7Networks_LH_Cont_Anterior_1"
+  ],
+  "configuration": {
+    "schaefer_n_rois": 400,
+    "correlation_threshold": 0.25,
+    "connectivity_metric": "correlation",
+    "detrend": true,
+    "standardize": true,
+    "low_pass": 0.1,
+    "high_pass": 0.01,
+    "tr": 0.607,
+    "confounds_strategy": [
+      "motion",
+      "wm_csf",
+      "global_signal",
+      "scrubbing"
+    ],
+    "scrubbing_threshold": 0.5,
+    "connectivity_measures": [
+      "correlation",
+      "partial_correlation",
+      "coherence"
+    ],
+    "frequency_bands": {
+      "slow_5": [
+        0.01,
+        0.027
+      ],
+      "slow_4": [
+        0.027,
+        0.073
+      ],
+      "slow_3": [
+        0.073,
+        0.198
+      ],
+      "slow_2": [
+        0.198,
+        0.25
+      ]
+    }
+  }
+}

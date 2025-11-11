@@ -1,0 +1,60 @@
+{
+  "subject": "sub-YLOPDHC01",
+  "graph_type": "multimodal_integrated",
+  "modalities": [
+    "T1w_structural",
+    "fMRI_functional"
+  ],
+  "atlas": "Schaefer2018_200ROIs_7Networks",
+  "processing_date": "2025-11-11 21:23:46.510444",
+  "integration_config": {
+    "functional_weight": 0.6,
+    "structural_weight": 0.4,
+    "integration_method": "concatenate",
+    "edge_integration": "weighted_sum"
+  },
+  "integrated_data": {
+    "n_rois": 200,
+    "n_features_per_roi": 7,
+    "feature_names": [
+      "func_degree",
+      "func_strength",
+      "func_clustering",
+      "thickness",
+      "area",
+      "grayvol",
+      "curvature"
+    ],
+    "n_edges": 19900
+  },
+  "component_graphs": {
+    "functional": {
+      "n_edges": 5214,
+      "correlation_threshold": 0.3
+    },
+    "structural": {
+      "n_edges": 19900,
+      "similarity_threshold": 0.1
+    }
+  },
+  "file_info": {
+    "contains": [
+      "multimodal_features",
+      "multimodal_adjacency",
+      "original_functional",
+      "original_structural"
+    ]
+  },
+  "example_roi_labels": [
+    "7Networks_LH_Vis_1",
+    "7Networks_LH_SomMot_1",
+    "7Networks_LH_DorsAttn_1",
+    "7Networks_LH_SalVentAttn_1",
+    "7Networks_LH_Limbic_1",
+    "7Networks_LH_Cont_1",
+    "7Networks_LH_Default_1",
+    "7Networks_LH_Vis_2",
+    "7Networks_LH_SomMot_2",
+    "7Networks_LH_DorsAttn_2"
+  ]
+}

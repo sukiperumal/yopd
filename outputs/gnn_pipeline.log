@@ -1,0 +1,21 @@
+2025-11-11 22:59:35,725 - __main__ - INFO - Output directories created in /Users/sukiperumal/Documents/yopd/outputs
+2025-11-11 22:59:35,725 - __main__ - INFO - Brain GNN Pipeline initialized
+2025-11-11 22:59:35,725 - __main__ - INFO - Project: YOPD Brain GNN Classification
+2025-11-11 22:59:35,725 - __main__ - INFO - 🚀 Starting complete Brain GNN pipeline
+2025-11-11 22:59:35,725 - __main__ - INFO - 📊 Step 1: Data preparation
+2025-11-11 22:59:35,725 - __main__ - INFO - Setting up data preparation...
+2025-11-11 22:59:35,727 - __main__ - WARNING - Data loader module not available - creating mock results
+2025-11-11 22:59:35,727 - __main__ - INFO - 🧠 Step 2: Model training and evaluation
+2025-11-11 22:59:35,727 - __main__ - INFO - Setting up model training...
+2025-11-11 22:59:35,728 - __main__ - WARNING - Model modules not available - creating mock results
+2025-11-11 22:59:35,728 - __main__ - INFO - 📈 Step 3: Model comparison
+2025-11-11 22:59:35,728 - __main__ - INFO - Comparing model performance...
+2025-11-11 22:59:35,728 - __main__ - INFO - 🔍 Step 4: Explainability analysis
+2025-11-11 22:59:35,728 - __main__ - INFO - Performing explainability analysis...
+2025-11-11 22:59:35,731 - __main__ - WARNING - Explainability module not available - creating mock results
+2025-11-11 22:59:35,731 - __main__ - INFO - 📊 Step 5: Comprehensive visualization
+2025-11-11 22:59:35,731 - __main__ - INFO - Creating comprehensive visualizations...
+2025-11-11 22:59:35,734 - __main__ - WARNING - Visualization module not available - creating mock results
+2025-11-11 22:59:35,734 - __main__ - INFO - 📄 Step 6: Final report generation
+2025-11-11 22:59:35,734 - __main__ - INFO - Generating final report...
+2025-11-11 22:59:35,734 - __main__ - ERROR - Pipeline execution failed: 'end_time'

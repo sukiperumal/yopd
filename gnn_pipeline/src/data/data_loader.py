@@ -219,7 +219,14 @@ class BrainGraphDataset:
         return features
     
     def _create_fully_connected_edges(self, num_nodes: int) -> torch.Tensor:
-        """Create fully connected edge index."""
+        """Create fully connected edge index.
+        
+        Note: This creates O(n²) edges which can be memory-intensive for large graphs.
+        """
+        if num_nodes > 500:
+            logger.warning(f"Creating fully connected graph with {num_nodes} nodes "
+                         f"will produce ~{num_nodes * (num_nodes - 1)} edges. "
+                         "Consider using sparse connectivity for better memory efficiency.")
         row = []
         col = []
         for i in range(num_nodes):
@@ -251,9 +258,11 @@ class BrainGraphDataset:
             if source is not None and target is not None:
                 # Handle both string and integer indices
                 if isinstance(source, str):
-                    source = int(source) if source.isdigit() else hash(source) % num_nodes
+                    # Use deterministic hash for string-to-index conversion
+                    source = int(source) if source.isdigit() else (sum(ord(c) for c in source) % num_nodes)
                 if isinstance(target, str):
-                    target = int(target) if target.isdigit() else hash(target) % num_nodes
+                    # Use deterministic hash for string-to-index conversion
+                    target = int(target) if target.isdigit() else (sum(ord(c) for c in target) % num_nodes)
                 
                 if 0 <= source < num_nodes and 0 <= target < num_nodes:
                     row.append(source)
@@ -321,10 +330,15 @@ class BrainGraphDataset:
             # Random node features
             x = torch.randn(num_nodes, num_features)
             
-            # Random edges (sparse connectivity)
+            # Random edges (sparse connectivity, no self-loops)
             num_edges = num_nodes * 10
-            row = torch.randint(0, num_nodes, (num_edges,))
-            col = torch.randint(0, num_nodes, (num_edges,))
+            row = torch.randint(0, num_nodes, (num_edges * 2,))
+            col = torch.randint(0, num_nodes, (num_edges * 2,))
+            
+            # Remove self-loops
+            mask = row != col
+            row = row[mask][:num_edges]
+            col = col[mask][:num_edges]
             edge_index = torch.stack([row, col], dim=0)
             
             # Random label

@@ -354,7 +354,7 @@ class BrainGNNTrainer:
         # Get labels from dataset - extract from Data objects
         labels = []
         for data in data_list:
-            if hasattr(data, 'y'):
+            if hasattr(data, 'y') and data.y is not None and data.y.numel() > 0:
                 labels.append(data.y.item() if data.y.numel() == 1 else data.y[0].item())
             else:
                 labels.append(0)  # Default label if not found

@@ -82,7 +82,6 @@ class BrainGAT(nn.Module):
         # Dropout layers
         self.dropout1 = nn.Dropout(dropout)
         self.dropout2 = nn.Dropout(dropout)
-        
         # Classifier
         self.classifier = nn.Sequential(
             nn.Linear(hidden_dim2, hidden_dim2 // 2),

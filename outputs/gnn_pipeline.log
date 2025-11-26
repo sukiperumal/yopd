@@ -19,3 +19,26 @@
 2025-11-11 22:59:35,734 - __main__ - INFO - 📄 Step 6: Final report generation
 2025-11-11 22:59:35,734 - __main__ - INFO - Generating final report...
 2025-11-11 22:59:35,734 - __main__ - ERROR - Pipeline execution failed: 'end_time'
+2025-11-26 21:36:20,120 - scripts.run_pipeline - INFO - Output directories created in /Users/sukiperumal/Documents/yopd/outputs
+2025-11-26 21:36:20,121 - scripts.run_pipeline - INFO - Brain GNN Pipeline initialized
+2025-11-26 21:36:20,121 - scripts.run_pipeline - INFO - Project: YOPD Brain GNN Classification
+2025-11-26 21:36:20,121 - scripts.run_pipeline - INFO - 🚀 Starting complete Brain GNN pipeline
+2025-11-26 21:36:20,121 - scripts.run_pipeline - INFO - 📊 Step 1: Data preparation
+2025-11-26 21:36:20,121 - scripts.run_pipeline - INFO - Setting up data preparation...
+2025-11-26 21:36:20,121 - scripts.run_pipeline - WARNING - Data loader module not available - creating mock results
+2025-11-26 21:36:20,121 - scripts.run_pipeline - INFO - 🧠 Step 2: Model training and evaluation
+2025-11-26 21:36:20,121 - scripts.run_pipeline - INFO - Setting up model training...
+2025-11-26 21:36:20,121 - scripts.run_pipeline - WARNING - Model modules not available - creating mock results
+2025-11-26 21:36:20,121 - scripts.run_pipeline - INFO - 📈 Step 3: Model comparison
+2025-11-26 21:36:20,121 - scripts.run_pipeline - INFO - Comparing model performance...
+2025-11-26 21:36:20,121 - scripts.run_pipeline - INFO - 🔍 Step 4: Explainability analysis
+2025-11-26 21:36:20,121 - scripts.run_pipeline - INFO - Performing explainability analysis...
+2025-11-26 21:36:20,121 - scripts.run_pipeline - WARNING - Explainability module not available - creating mock results
+2025-11-26 21:36:20,121 - scripts.run_pipeline - INFO - 📊 Step 5: Comprehensive visualization
+2025-11-26 21:36:20,121 - scripts.run_pipeline - INFO - Creating comprehensive visualizations...
+2025-11-26 21:36:20,121 - scripts.run_pipeline - WARNING - Visualization module not available - creating mock results
+2025-11-26 21:36:20,121 - scripts.run_pipeline - INFO - 📄 Step 6: Final report generation
+2025-11-26 21:36:20,121 - scripts.run_pipeline - INFO - Generating final report...
+2025-11-26 21:36:20,121 - scripts.run_pipeline - INFO - Final report saved to /Users/sukiperumal/Documents/yopd/outputs/results/final_report.json
+2025-11-26 21:36:20,121 - scripts.run_pipeline - INFO - ✅ Pipeline completed successfully in 0.0 seconds
+2025-11-26 21:36:20,122 - scripts.run_pipeline - INFO - Complete pipeline results saved to /Users/sukiperumal/Documents/yopd/outputs/results/complete_pipeline_results.json

@@ -75,7 +75,7 @@
       "BrainSegVolNotVent": 1204000
     },
     "freesurfer_version": "7.3.2",
-    "example_cortical_metrics": {
+    "cortical_metrics": {
       "bankssts": {
         "thickness": 3.1256168471256003,
         "area": 1452,
@@ -103,7 +103,7 @@
       }
     }
   },
-  "sample_roi_labels": [
+  "roi_labels": [
     "7Networks_LH_Vis_Primary_1",
     "7Networks_LH_SomMot_Primary_1",
     "7Networks_LH_DorsAttn_Frontal_1",

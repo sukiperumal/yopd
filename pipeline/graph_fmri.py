@@ -12,9 +12,6 @@ Key components:
 - Compute functional connectivity matrices (correlation-based)
 - Apply thresholding to create sparse networks
 - Calculate graph-theoretic metrics for each node
-
-Author: Pipeline Development Team
-Date: November 2025
 """
 
 import numpy as np

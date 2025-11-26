@@ -12,9 +12,6 @@ Key components:
 - Combine connectivity matrices from multiple modalities
 - Create unified multimodal brain graphs
 - Compute multimodal network metrics
-
-Author: Pipeline Development Team
-Date: November 2025
 """
 
 import numpy as np

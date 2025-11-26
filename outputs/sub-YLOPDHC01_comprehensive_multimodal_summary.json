@@ -128,7 +128,7 @@
     "structural_edges": 11232,
     "functional_edges": 79800
   },
-  "sample_roi_labels": [
+  "roi_labels": [
     "7Networks_LH_Vis_Primary_1",
     "7Networks_LH_SomMot_Primary_1",
     "7Networks_LH_DorsAttn_Frontal_1",

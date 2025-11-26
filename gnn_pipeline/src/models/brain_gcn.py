@@ -135,11 +135,7 @@ class BrainGCN(nn.Module):
         return x
 
 
-def demonstrate_brain_gcn():
-    """Demonstrate BrainGCN model"""
-    print("🧠 BrainGCN Model Demo")
-    print("="*25)
-    
+def brain_gcn():
     # Create model
     model = BrainGCN(
         num_features=17,  # Multimodal brain features
@@ -175,4 +171,4 @@ def demonstrate_brain_gcn():
 
 
 if __name__ == "__main__":
-    demonstrate_brain_gcn()
+    brain_gcn()

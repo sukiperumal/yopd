@@ -622,7 +622,7 @@ class BrainGNNPipeline:
 - **Description**: {report['project_info']['description']}
 - **Version**: {report['project_info']['version']}
 - **Execution Time**: {report['execution_summary'].get('total_execution_time', 'N/A')} seconds
-- **Completion**: {report['execution_summary']['start_time']} - {report['execution_summary']['end_time']}
+- **Completion**: {report['execution_summary'].get('start_time', 'N/A')} - {report['execution_summary'].get('end_time', 'N/A')}
 
 ## Data Summary
 - **Status**: {report['data_summary'].get('status', 'N/A')}

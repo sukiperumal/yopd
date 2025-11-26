@@ -161,7 +161,7 @@
     "scrubbed_timepoints": 14,
     "percentage_scrubbed": 0.9427609427609427
   },
-  "sample_roi_labels": [
+  "roi_labels": [
     "7Networks_LH_Vis_Primary_1",
     "7Networks_LH_SomMot_Primary_1",
     "7Networks_LH_DorsAttn_Frontal_1",

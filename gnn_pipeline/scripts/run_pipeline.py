@@ -33,12 +33,17 @@ import warnings
 # Suppress warnings
 warnings.filterwarnings('ignore')
 
-# Setup logging
+# Setup logging - use a relative path that works cross-platform
+import os
+log_dir = os.environ.get('YOPD_LOG_DIR', 'outputs')
+os.makedirs(log_dir, exist_ok=True)
+log_file = os.path.join(log_dir, 'gnn_pipeline.log')
+
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
     handlers=[
-        logging.FileHandler('/Users/sukiperumal/Documents/yopd/outputs/gnn_pipeline.log'),
+        logging.FileHandler(log_file),
         logging.StreamHandler(sys.stdout)
     ]
 )
@@ -47,16 +52,19 @@ logger = logging.getLogger(__name__)
 def create_default_config() -> Dict[str, Any]:
     """Create default configuration for the pipeline"""
     
+    # Use relative paths that work cross-platform
+    workspace_path = os.environ.get('YOPD_WORKSPACE', os.getcwd())
+    
     return {
         "project": {
             "name": "YOPD Brain GNN Classification",
             "description": "Graph neural network classification of YOPD subtypes using multimodal brain connectivity",
             "version": "1.0.0",
-            "workspace_path": "/Users/sukiperumal/Documents/yopd"
+            "workspace_path": workspace_path
         },
         
         "data": {
-            "comprehensive_graphs_dir": "/Users/sukiperumal/Documents/yopd/outputs",
+            "comprehensive_graphs_dir": os.path.join(workspace_path, "outputs"),
             "num_synthetic_subjects": 100,
             "test_split": 0.2,
             "val_split": 0.15,
@@ -118,7 +126,7 @@ def create_default_config() -> Dict[str, Any]:
         },
         
         "output": {
-            "base_dir": "/Users/sukiperumal/Documents/yopd/outputs",
+            "base_dir": os.path.join(workspace_path, "outputs"),
             "models_dir": "models",
             "results_dir": "results",
             "plots_dir": "visualizations",
@@ -222,21 +230,24 @@ class BrainGNNPipeline:
         
         logger.info("Setting up data preparation...")
         
-        # Import data loader (would normally be imported at top)
+        # Import data loader
         try:
-            from gnn_data_loader import BrainGraphDataset, TrainingConfig as DataConfig
+            from data import BrainGraphDataset, TrainingConfig as DataConfig
         except ImportError:
-            logger.warning("Data loader module not available - creating mock results")
-            return {
-                'status': 'mock',
-                'num_subjects': self.config['data']['num_synthetic_subjects'],
-                'num_classes': len(self.class_labels),
-                'data_splits': {
-                    'train': 0.65,
-                    'val': 0.15,
-                    'test': 0.2
+            try:
+                from data.data_loader import BrainGraphDataset, TrainingConfig as DataConfig
+            except ImportError:
+                logger.warning("Data loader module not available - creating mock results")
+                return {
+                    'status': 'mock',
+                    'num_subjects': self.config['data']['num_synthetic_subjects'],
+                    'num_classes': len(self.class_labels),
+                    'data_splits': {
+                        'train': 0.65,
+                        'val': 0.15,
+                        'test': 0.2
+                    }
                 }
-            }
         
         # Setup data configuration
         data_config = DataConfig(
@@ -274,18 +285,24 @@ class BrainGNNPipeline:
         
         logger.info("Setting up model training...")
         
-        # Import models and training (would normally be imported at top)
+        # Import models and training
         try:
-            from gnn_models import BrainGCN, BrainGAT, BrainGCNGAT_Parallel, BrainGCNGAT_Sequential
-            from gnn_training import BrainGNNTrainer, TrainingConfig
+            from models import BrainGCN, BrainGAT, BrainGCNGAT_Parallel, BrainGCNGAT_Sequential
+            from training import BrainGNNTrainer, TrainingConfig
         except ImportError:
-            logger.warning("Model modules not available - creating mock results")
-            return {
-                'status': 'mock',
-                'models_trained': ['BrainGCN', 'BrainGAT', 'BrainGCNGAT_Sequential', 'BrainGCNGAT_Parallel'],
-                'best_model': 'BrainGAT',
-                'best_accuracy': 0.85
-            }
+            try:
+                from models.brain_gcn import BrainGCN
+                from models.brain_gat import BrainGAT
+                from models.combined_models import BrainGCNGAT_Parallel, BrainGCNGAT_Sequential
+                from training.trainer import BrainGNNTrainer, TrainingConfig
+            except ImportError:
+                logger.warning("Model modules not available - creating mock results")
+                return {
+                    'status': 'mock',
+                    'models_trained': ['BrainGCN', 'BrainGAT', 'BrainGCNGAT_Sequential', 'BrainGCNGAT_Parallel'],
+                    'best_model': 'BrainGAT',
+                    'best_accuracy': 0.85
+                }
         
         # Setup training configuration
         training_config = TrainingConfig(
@@ -428,15 +445,18 @@ class BrainGNNPipeline:
         logger.info("Performing explainability analysis...")
         
         try:
-            from gnn_explainability import BrainGNNExplainer, ExplainabilityConfig
+            from explainability import BrainGNNExplainer, ExplainabilityConfig
         except ImportError:
-            logger.warning("Explainability module not available - creating mock results")
-            return {
-                'status': 'mock',
-                'top_important_regions': ['frontal', 'parietal', 'temporal'],
-                'attention_analysis': 'completed',
-                'brain_networks': ['default_mode', 'executive', 'salience']
-            }
+            try:
+                from explainability.explainer import BrainGNNExplainer, ExplainabilityConfig
+            except ImportError:
+                logger.warning("Explainability module not available - creating mock results")
+                return {
+                    'status': 'mock',
+                    'top_important_regions': ['frontal', 'parietal', 'temporal'],
+                    'attention_analysis': 'completed',
+                    'brain_networks': ['default_mode', 'executive', 'salience']
+                }
         
         # Setup explainability configuration
         explainability_config = ExplainabilityConfig(
@@ -497,14 +517,17 @@ class BrainGNNPipeline:
         logger.info("Creating comprehensive visualizations...")
         
         try:
-            from gnn_visualization import BrainGNNVisualizer, VisualizationConfig
+            from visualization import BrainGNNVisualizer, VisualizationConfig
         except ImportError:
-            logger.warning("Visualization module not available - creating mock results")
-            return {
-                'status': 'mock',
-                'plots_created': ['brain_roi_importance.png', 'attention_heatmap.png', 'training_curves.png'],
-                'visualization_report': 'generated'
-            }
+            try:
+                from visualization.visualizer import BrainGNNVisualizer, VisualizationConfig
+            except ImportError:
+                logger.warning("Visualization module not available - creating mock results")
+                return {
+                    'status': 'mock',
+                    'plots_created': ['brain_roi_importance.png', 'attention_heatmap.png', 'training_curves.png'],
+                    'visualization_report': 'generated'
+                }
         
         # Setup visualization configuration
         viz_config = VisualizationConfig(

@@ -74,7 +74,7 @@ class TrainingConfig:
     # Logging and saving
     log_interval: int = 10
     save_best_model: bool = True
-    save_dir: str = "/Users/sukiperumal/Documents/yopd/outputs/models"
+    save_dir: str = "outputs/models"
     
     # Device
     device: str = "cuda" if torch.cuda.is_available() else "cpu"
@@ -288,7 +288,7 @@ class BrainGNNTrainer:
         if self.config.lr_scheduler:
             scheduler = ReduceLROnPlateau(
                 optimizer, mode='min', patience=self.config.lr_patience,
-                factor=self.config.lr_factor, min_lr=self.config.lr_min, verbose=True
+                factor=self.config.lr_factor, min_lr=self.config.lr_min
             )
         
         # Early stopping
@@ -349,9 +349,15 @@ class BrainGNNTrainer:
         logger.info(f"Starting {self.config.cv_folds}-fold cross-validation")
         
         # Prepare data for CV
-        data_list = dataset.load_and_process()  
-        labels = [self.label_map[graph['label']] for graph in 
-                 [dataset.load_synthetic_graphs() for dataset in [dataset]][0]]
+        data_list = dataset.load_and_process()
+        
+        # Get labels from dataset - extract from Data objects
+        labels = []
+        for data in data_list:
+            if hasattr(data, 'y'):
+                labels.append(data.y.item() if data.y.numel() == 1 else data.y[0].item())
+            else:
+                labels.append(0)  # Default label if not found
         
         # Initialize CV
         cv = StratifiedKFold(
